@@ -1,11 +1,12 @@
-package com.example.beautyscannerandroid
+package com.example.beautyscannerandroid.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.beautyscannerandroid.viewmodel.MainViewModel
+import com.example.beautyscannerandroid.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

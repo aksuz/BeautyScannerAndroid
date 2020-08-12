@@ -1,0 +1,78 @@
+package com.example.beautyscannerandroid.activity
+
+import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.beautyscannerandroid.R
+import com.example.beautyscannerandroid.adapter.CategoryProductListAdapter
+import com.example.beautyscannerandroid.listener.OnCategoryProductClickListener
+import com.example.beautyscannerandroid.model.Product
+import com.example.beautyscannerandroid.viewmodel.CategoryProductListViewModel
+import kotlinx.android.synthetic.main.activity_category_product_list.*
+
+class CategoryProductListActivity : AppCompatActivity() {
+    private val viewModel: CategoryProductListViewModel by lazy {
+        ViewModelProvider(this).get(CategoryProductListViewModel::class.java)
+    }
+//    private var longCategoryId: Long = 
+
+    private val categoryProductListAdapter: CategoryProductListAdapter by lazy {
+        CategoryProductListAdapter(
+            listOf(),
+            getOnProductClickListener()
+        )
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_category_product_list)
+        supportActionBar?.title = getString(R.string.products)
+        initRecycler()
+        setupObservers()
+        categoryProductListLoader.visibility = View.VISIBLE
+        viewModel.getCategoryProducts(intent.getLongExtra("categoryId", 0))
+    }
+
+    private fun initRecycler() {
+        categoryProductList.apply {
+            layoutManager = LinearLayoutManager(this@CategoryProductListActivity)
+            adapter = categoryProductListAdapter
+        }
+    }
+
+    fun setupObservers() {
+        viewModel.categoryProductList.observe(
+            this,
+            Observer { products ->
+                categoryProductListLoader.visibility = View.GONE
+                categoryProductListAdapter.myDataset = products
+                categoryProductListAdapter.notifyDataSetChanged()
+            })
+        viewModel.shouldHideLoader.observe(
+            this,
+            Observer {
+                categoryProductListLoader.visibility = View.GONE
+                //todo info dla usera że nie zwracamy listy
+                //todo if connection fail inform categotyListLoader
+            }
+        )
+    }
+
+    private fun getOnProductClickListener(): OnCategoryProductClickListener {
+        return object :
+            OnCategoryProductClickListener {
+            override fun onCategoryProductClicked(product: Product) {
+                Toast.makeText(this@CategoryProductListActivity, product.name, Toast.LENGTH_SHORT)
+                    .show()
+                TODO("Not yet implemented")
+//                productTitle.setOnClickListener
+            }
+        }
+
+    }
+}
+

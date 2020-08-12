@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.CategoryListActivity">
+    tools:context=".activity.CategoryProductListActivity">
 
     <ProgressBar
-        android:id="@+id/categoryListLoader"
+        android:id="@+id/categoryProductListLoader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/categoryList"
+        android:id="@+id/categoryProductList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="80dp"

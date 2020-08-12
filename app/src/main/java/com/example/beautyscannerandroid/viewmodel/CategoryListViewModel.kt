@@ -1,4 +1,4 @@
-package com.example.beautyscannerandroid
+package com.example.beautyscannerandroid.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

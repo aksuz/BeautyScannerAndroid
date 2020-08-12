@@ -1,4 +1,4 @@
-package com.example.beautyscannerandroid
+package com.example.beautyscannerandroid.listener
 
 import com.example.beautyscannerandroid.model.Category
 

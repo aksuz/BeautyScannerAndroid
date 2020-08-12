@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">BeautyScannerAndroid</string>
-    <string name="the_scanner">Scanner</string>
-    <string name="the_categories">Categories</string>
+    <string name="scanner">Scanner</string>
+    <string name="categories">Categories</string>
     <string name="category">Category</string>
+    <string name="description">Description</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="rating">Rating</string>
+    <string name="products">Products</string>
 </resources>
