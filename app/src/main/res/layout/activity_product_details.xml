@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.ProductDetailsActivity">
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars[0]" />
+
+        <TextView
+            android:id="@+id/productCategoryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/category"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productImage" />
+
+        <TextView
+            android:id="@+id/productCategory"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/productCategoryLabel"
+            app:layout_constraintTop_toBottomOf="@id/productImage"
+            tools:text="kjdahjkjdkjadkhak fsdfs ds fdfsd fssdfsd sssssssssssssjdhjkhk" />
+
+        <TextView
+            android:id="@+id/productRatingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/rating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productCategory" />
+
+        <TextView
+            android:id="@+id/productRating"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/productCategoryLabel"
+            app:layout_constraintTop_toBottomOf="@id/productCategory"
+            tools:text="kjdahjkjdkjadkhakjdhjkhk" />
+
+
+        <TextView
+            android:id="@+id/productDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productRating" />
+
+        <TextView
+            android:id="@+id/productDescription"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/productCategoryLabel"
+            app:layout_constraintTop_toBottomOf="@id/productRating"
+            tools:text="kjdahjkjdkjadkhakjdhjkhk" />
+
+        <TextView
+            android:id="@+id/productIsAllergenLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/is_allergen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productDescription" />
+
+        <TextView
+            android:id="@+id/productIsAllergen"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@id/productIsAllergenLabel"
+            app:layout_constraintTop_toBottomOf="@id/productDescription"
+            tools:text="23" />
+
+        <TextView
+            android:id="@+id/productIsIrritantLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/is_irritant"
+            app:layout_constraintStart_toEndOf="@id/productIsAllergen"
+            app:layout_constraintTop_toBottomOf="@id/productDescription" />
+
+        <TextView
+            android:id="@+id/productIsIrritant"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@id/productIsIrritantLabel"
+            app:layout_constraintTop_toBottomOf="@id/productDescription"
+            tools:text="32" />
+
+        <TextView
+            android:id="@+id/productIsComodogenicLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/is_comedogenic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productIsIrritantLabel" />
+
+        <TextView
+            android:id="@+id/productIsComodogenic"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@id/productIsComodogenicLabel"
+            app:layout_constraintTop_toBottomOf="@id/productIsIrritantLabel"
+            tools:text="23" />
+
+        <TextView
+            android:id="@+id/productIsCarcinogenicLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/is_carcinogenic"
+            app:layout_constraintStart_toEndOf="@id/productIsComodogenic"
+            app:layout_constraintTop_toBottomOf="@id/productIsIrritantLabel" />
+
+        <TextView
+            android:id="@+id/productIsCarcinogenic"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@id/productIsCarcinogenicLabel"
+            app:layout_constraintTop_toBottomOf="@id/productIsIrritantLabel"
+            tools:text="32" />
+
+        <TextView
+            android:id="@+id/productIsPregnantForbidenLabel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/is_forbidden_during_pregnancy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productIsCarcinogenic" />
+
+        <TextView
+            android:id="@+id/productIsPregnantForbiden"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@id/productIsPregnantForbidenLabel"
+            app:layout_constraintTop_toBottomOf="@id/productIsCarcinogenic"
+            tools:text="23" />
+
+        <TextView
+            android:id="@+id/productIngredientsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/ingredients"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productIsPregnantForbiden" />
+
+        <TextView
+            android:id="@+id/productIngredients"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/productCategoryLabel"
+            app:layout_constraintTop_toBottomOf="@id/productIsPregnantForbiden"
+            tools:text="kjdahjkjd cvxcv x cvx c c v xc v xc v c vxc  vxc xkjadkhakjdhjkhk" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

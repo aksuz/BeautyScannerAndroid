@@ -1,5 +1,6 @@
 package com.example.beautyscannerandroid.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -68,8 +69,10 @@ class CategoryProductListActivity : AppCompatActivity() {
             override fun onCategoryProductClicked(product: Product) {
                 Toast.makeText(this@CategoryProductListActivity, product.name, Toast.LENGTH_SHORT)
                     .show()
-                TODO("Not yet implemented")
-//                productTitle.setOnClickListener
+                val intent =
+                    Intent(this@CategoryProductListActivity, ProductDetailsActivity::class.java)
+                intent.putExtra("productId", product.id)
+                startActivity(intent)
             }
         }
 

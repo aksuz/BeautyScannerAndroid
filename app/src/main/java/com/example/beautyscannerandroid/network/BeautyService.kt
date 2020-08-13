@@ -7,7 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface BeautyService {
 
@@ -17,8 +16,8 @@ interface BeautyService {
     @GET("/api/products/categoryId/{id}")
     fun getCategoryProducts(@Path("id") id: Long): Call<List<Product>>
 
-//    @GET("/api/v1/Articles/Popular")
-//    fun getPopularArticles(@Query("limit") limit: Int): Call<PopularArticlesResponse>
+    @GET("/api/products/{id}")
+    fun getProductDetails(@Path("id") id: Long): Call<Product>
     //todo more methods for responses
 
     companion object {

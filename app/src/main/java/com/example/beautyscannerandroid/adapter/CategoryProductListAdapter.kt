@@ -9,7 +9,10 @@ import com.example.beautyscannerandroid.listener.OnCategoryProductClickListener
 import com.example.beautyscannerandroid.model.Product
 import kotlinx.android.synthetic.main.item_category_product_list.view.*
 
-class CategoryProductListAdapter(var myDataset: List<Product>, val callback: OnCategoryProductClickListener) :
+class CategoryProductListAdapter(
+    var myDataset: List<Product>,
+    val callback: OnCategoryProductClickListener
+) :
     RecyclerView.Adapter<CategoryProductListAdapter.CategoryProductListViewHolder>() {
 
     class CategoryProductListViewHolder(val view: View) : RecyclerView.ViewHolder(view)

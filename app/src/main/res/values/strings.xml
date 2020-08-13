@@ -1,10 +1,22 @@
 <resources>
     <string name="app_name">BeautyScannerAndroid</string>
-    <string name="scanner">Scanner</string>
-    <string name="categories">Categories</string>
-    <string name="category">Category</string>
-    <string name="description">Description</string>
-    <string name="ingredients">Ingredients</string>
-    <string name="rating">Rating</string>
-    <string name="products">Products</string>
+    <string name="scanner">Skaner</string>
+    <string name="categories">Kategorie</string>
+    <string name="category">Kategoria</string>
+    <string name="description">Opis</string>
+    <string name="ingredients">Składniki</string>
+    <string name="rating">Ocena</string>
+    <string name="products">Produkty</string>
+    <string name="product_details">Szczegóły produkty</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="missing_info">Brak informacji.\nPoinformuj nas o braku informacji, uzupełnimy je!</string>
+    <string name="is_allergen">Składniki uczulające</string>
+    <string name="is_irritant">Składniki drażniące</string>
+    <string name="is_comedogenic">Składniki zatykające pory</string>
+    <string name="is_carcinogenic">Składniki rakotwórcze</string>
+    <string name="is_forbidden_during_pregnancy">Składniki zabronione w ciąży</string>
+    <string name="title_activity_user">UserActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
