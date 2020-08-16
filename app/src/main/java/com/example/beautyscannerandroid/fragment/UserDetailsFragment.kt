@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.beautyscannerandroid.R
 import com.example.beautyscannerandroid.model.User
 import com.example.beautyscannerandroid.viewmodel.UserViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_user_details.*
 
 
@@ -22,20 +24,19 @@ class UserDetailsFragment : Fragment() {
         super.onCreate(savedInstanceState)
         viewModel.getUserDetails(2L)
         setupObservers()
+//        editUserInfoButton.setOnClickListener {
+//            Toast.makeText(activity, "Kliknięto przycisk", Toast.LENGTH_SHORT).show()
+//        }
     }
 
+    //todo info znika po powrocie z 3 do 1 do zakładki!!!!
     private fun setupObservers() {
         viewModel.userDetails.observe(
             this,
             Observer { user ->
-//                categoryProductListLoader.visibility = View.GONE
-                mapUserToUserDetails(user)
+                nick.text = user!!.nick
+                email.text = user!!.email
             })
-    }
-
-    private fun mapUserToUserDetails(user: User?) {
-        nick.text = user!!.nick
-        email.text = user!!.email
     }
 
     override fun onCreateView(

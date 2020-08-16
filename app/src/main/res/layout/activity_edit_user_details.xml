@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.UserDetailsFragment">
+    tools:context=".activity.EditUserDetailsActivity">
 
     <TextView
-        android:id="@+id/nickLabel"
+        android:id="@+id/editNickLabel"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -16,54 +16,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/nick"
+    <EditText
+        android:id="@+id/editNick"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/nickLabel"
-        app:layout_constraintStart_toEndOf="@id/nickLabel"
-        app:layout_constraintTop_toTopOf="@id/nickLabel"
+        app:layout_constraintBottom_toBottomOf="@id/editNickLabel"
+        app:layout_constraintStart_toEndOf="@id/editNickLabel"
+        app:layout_constraintTop_toTopOf="@id/editNickLabel"
         tools:text="sdadsadadsdfe" />
 
     <TextView
-        android:id="@+id/emailLabel"
+        android:id="@+id/editEmailLabel"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/email"
-        app:layout_constraintStart_toStartOf="@id/nickLabel"
-        app:layout_constraintTop_toBottomOf="@id/nickLabel" />
+        app:layout_constraintStart_toStartOf="@id/editNickLabel"
+        app:layout_constraintTop_toBottomOf="@id/editNickLabel" />
 
 
-    <TextView
-        android:id="@+id/email"
+    <EditText
+        android:id="@+id/editEmail"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/nick"
-        app:layout_constraintTop_toTopOf="@id/emailLabel"
-        app:layout_constraintBottom_toBottomOf="@id/emailLabel"
+        app:layout_constraintStart_toStartOf="@id/editNick"
+        app:layout_constraintTop_toTopOf="@id/editEmailLabel"
+        app:layout_constraintBottom_toBottomOf="@id/editEmailLabel"
         tools:text="kjdahjkjdkjadkhakjdhjkhk" />
 
     <Button
-        android:id="@+id/editUserInfoButton"
+        android:id="@+id/saveUserInfoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="@string/change_user_details"
-        app:layout_constraintTop_toBottomOf="@id/emailLabel"
+        android:text="@string/save_user_details"
+        app:layout_constraintTop_toBottomOf="@id/editEmailLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <Button
-        android:id="@+id/editUserPasswordButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/change_user_password"
-        app:layout_constraintTop_toBottomOf="@id/editUserInfoButton"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
