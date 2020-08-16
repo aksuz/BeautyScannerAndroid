@@ -29,4 +29,6 @@
     <string name="user_allergens">Moje alergeny</string>
     <string name="user_info">Informacje o użytykowniku</string>
     <string name="welcome">Witaj, zaloguj się!</string>
+    <string name="opening_date">Data otwarcia:</string>
+    <string name="expiration_date">Termin przydatności:</string>
 </resources>

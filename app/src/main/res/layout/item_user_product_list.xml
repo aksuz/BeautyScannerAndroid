@@ -1,20 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/userProductTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/userProductImage"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:padding="10dp"
-        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+    <TextView
+        android:id="@+id/userProductName"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@+id/userProductImage"
+        app:layout_constraintTop_toTopOf="@+id/userProductImage"
+        tools:text="cokosfdfsfdd fdsfdsfdsdf sdfsdfs sf dsf sdfsdf sf" />
+    <TextView
+        android:id="@+id/userProductProducer"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@+id/userProductImage"
+        app:layout_constraintTop_toBottomOf="@+id/userProductName"
         tools:text="cokosfdfsfdd" />
+
+    <TextView
+        android:id="@+id/userProductOpeningDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/opening_date"
+        app:layout_constraintLeft_toRightOf="@+id/userProductImage"
+        app:layout_constraintTop_toBottomOf="@+id/userProductProducer"
+        tools:text="cokosfdfsfdd" />
+    <TextView
+        android:id="@+id/userProductOpeningDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/userProductOpeningDateLabel"
+
+        app:layout_constraintTop_toTopOf="@+id/userProductOpeningDateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/userProductProducer"
+        tools:text="cokosfdfsfdd" />
+    <TextView
+        android:id="@+id/userProductExpirationDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/expiration_date"
+        app:layout_constraintLeft_toRightOf="@+id/userProductImage"
+        app:layout_constraintTop_toBottomOf="@+id/userProductOpeningDateLabel"
+        tools:text="cokosfdfsfdd" />
+
+    <TextView
+        android:id="@+id/userProductExpirationDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/userProductExpirationDateLabel"
+        app:layout_constraintTop_toTopOf="@+id/userProductExpirationDateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/userProductProducer"
+        tools:text="cokosfdfsfdd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userProductImage"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,6 @@
 package com.example.beautyscannerandroid.network
 
-import com.example.beautyscannerandroid.model.Category
-import com.example.beautyscannerandroid.model.Product
-import com.example.beautyscannerandroid.model.User
+import com.example.beautyscannerandroid.model.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -26,6 +24,11 @@ interface BeautyService {
     @GET("/api/users/{id}")
     fun getUserDetailsById(@Path("id") id: Long): Call<User>
 
+    @GET("/api/users/{id}/userProducts")
+    fun getUserProductsByUserId(@Path("id") id: Long): Call<List<MyProduct>>
+
+    @GET("/api/users/{id}/userAllergens")
+    fun getUserAllergensByUserId(@Path("id") id: Long): Call<List<Ingredient>>
 
 
     companion object {

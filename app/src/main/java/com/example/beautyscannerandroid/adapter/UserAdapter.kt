@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.beautyscannerandroid.R
-import com.example.beautyscannerandroid.UserAllergensFragment
-import com.example.beautyscannerandroid.UserDetailsFragment
-import com.example.beautyscannerandroid.UserProductsFragment
+import com.example.beautyscannerandroid.fragmnet.UserAllergensFragment
+import com.example.beautyscannerandroid.fragmnet.UserDetailsFragment
+import com.example.beautyscannerandroid.fragmnet.UserProductsFragment
 
 
 class UserAdapter(context: Context, fragmentManager: FragmentManager) :

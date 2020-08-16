@@ -57,13 +57,15 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun addImage(product: Product) {
+        var picture: String = "https://www.saccon.it/img/coming-soon.jpg"
         if (!product.url.isNullOrEmpty()) {
-            Glide
-                .with(this)
-                .load(product.url)
-                .centerCrop()
-                .into(productImage);
+            picture = product.url
         }
+        Glide
+            .with(this)
+            .load(picture)
+            .centerCrop()
+            .into(productImage);
     }
 
     private fun analyseIngredients(product: Product) {
