@@ -15,7 +15,7 @@ class ProductDetailsListViewModel : ViewModel() {
 
     fun getProductDetails(productId: Long) {
         val service = BeautyService.create()
-        val call = service.getProductDetails(productId)
+        val call = service.getProductDetailsById(productId)
 
         //todo check response - ingredients isXXX all FALSE
 

@@ -15,13 +15,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.UserActivity"
-            android:label="@string/title_activity_user"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".activity.UserActivity" />
         <activity android:name=".activity.CategoryProductListActivity" />
         <activity android:name=".activity.ProductDetailsActivity" />
         <activity android:name=".activity.CategoryListActivity" />

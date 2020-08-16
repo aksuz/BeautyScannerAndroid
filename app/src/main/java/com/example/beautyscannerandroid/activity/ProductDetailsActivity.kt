@@ -1,11 +1,13 @@
 package com.example.beautyscannerandroid.activity
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.example.beautyscannerandroid.R
 import com.example.beautyscannerandroid.model.Product
 import com.example.beautyscannerandroid.viewmodel.ProductDetailsListViewModel
@@ -24,6 +26,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.product_details)
         viewModel.getProductDetails(intent.getLongExtra("productId", 0))
         setupObservers()
+        productIngredients.movementMethod = LinkMovementMethod.getInstance();
     }
 
 
@@ -47,24 +50,35 @@ class ProductDetailsActivity : AppCompatActivity() {
     private fun mapProductToLayout(product: Product) {
         productCategory.text = product.category?.name
         productDescription.text = product.description
-        productIngredients.text = getIngredients(product)
+        productIngredients.text = Html.fromHtml(getIngredients(product), Html.FROM_HTML_MODE_LEGACY)
         analyseIngredients(product)
         productRating.text = getRating(product)
         addImage(product)
     }
 
     private fun addImage(product: Product) {
-        val imagePath: String
-        val urlPath: String
-        if (!product.url.isNullOrEmpty()) {
-            urlPath = product.url
-            //todo display from internet
-        } else if (!product.picture.isNullOrEmpty()) {
-            imagePath = product.picture
-            val bmImg = BitmapFactory.decodeFile(imagePath)
-            productImage.setImageBitmap(bmImg)
+//        val imagePath: String
+//        val urlPath: String
+//        if (!product.url.isNullOrEmpty()) {
+//            urlPath = product.url
+        //todo display from internet
 
-        }
+        Glide
+            .with(this)
+            .load("https://static.wizaz.pl/media/cache/500x500/kwc/product/5/d/5d35f5be13aa6.jpeg")
+            .centerCrop()
+//                .placeholder(R.drawable.loading_spinner)
+            .into(productImage);
+
+//        } else if (!product.picture.isNullOrEmpty()) {
+////            val picName: String = "p" + product.id
+////            val image: List<Int> = listOf(R.drawable.p)
+//
+//            imagePath = product.picture
+//            val bmImg = BitmapFactory.decodeFile(imagePath)
+//
+//            productImage.setImageBitmap(bmImg)
+//        }
     }
 
     private fun analyseIngredients(product: Product) {
@@ -90,23 +104,30 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun getIngredients(product: Product): String {
+        val hyperlink: String = ""
+
         return if (product.ingredients.isNullOrEmpty()) {
             getString(R.string.missing_info)
         } else {
-            product.ingredients?.joinToString(", ") {
-                it.name
+            product.ingredients.joinToString(", ") {
+                if (!it.url.isNullOrEmpty()) {
+                    "<a href=\"" + it.url + "\">" + it.name + "</a>"
+                } else {
+                    it.name
+                }
             }
         }
     }
 
-    private fun getRating(product: Product?): String? {
-        if (product?.noRatingVotes == 0.0) {
-            return "0.0"
-        } else {
-            val raiting: Double? = product?.sumRainingVotes?.div(product?.noRatingVotes)
-            return raiting.toString()
-        }
+
+private fun getRating(product: Product?): String? {
+    if (product?.noRatingVotes == 0.0) {
+        return "0.0"
+    } else {
+        val raiting: Double? = product?.sumRainingVotes?.div(product?.noRatingVotes)
+        return raiting.toString()
     }
+}
 
 
 }

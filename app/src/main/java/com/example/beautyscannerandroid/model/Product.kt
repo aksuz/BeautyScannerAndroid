@@ -8,8 +8,10 @@ data class Product(
     val description: String,
     val category: Category,
     val ingredients: List<Ingredient>,
-    val url: String,
+    val url: String?,
     val picture: String,
     val noRatingVotes: Double,
     val sumRainingVotes: Double
 )
+
+//todo sprawdzic modele, jesli null to ?
