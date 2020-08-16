@@ -13,6 +13,5 @@ class UserActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.user_info)
         viewPager.adapter = UserAdapter(this, supportFragmentManager)
         tabLayout.setupWithViewPager(viewPager)
-
     }
 }

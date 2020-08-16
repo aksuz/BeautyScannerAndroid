@@ -3,7 +3,7 @@ package com.example.beautyscannerandroid.model
 data class Ingredient(
     val id: Long,
     val name: String,
-    val url: String,
+    val url: String?,
     val allergen: Boolean,
     val irritant: Boolean,
     val natural: Boolean,

@@ -30,7 +30,7 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
 
-    fun setupObservers() {
+    private fun setupObservers() {
         viewModel.productDetails.observe(
             this,
             Observer { product ->
@@ -48,7 +48,7 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun mapProductToLayout(product: Product) {
-        productCategory.text = product.category?.name
+        productCategory.text = product.category.name
         productDescription.text = product.description
         productIngredients.text = Html.fromHtml(getIngredients(product), Html.FROM_HTML_MODE_LEGACY)
         analyseIngredients(product)
@@ -57,13 +57,7 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun addImage(product: Product) {
-//        val imagePath: String
-//        val urlPath: String
-//        if (!product.url.isNullOrEmpty()) {
-//            urlPath = product.url
-        //todo display from internet
-
-        if(!product.url.isNullOrEmpty()) {
+        if (!product.url.isNullOrEmpty()) {
             Glide
                 .with(this)
                 .load(product.url)
@@ -79,7 +73,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         var isCarcinogenic: Int = 0
         var isForbiddenDuringPregnancy: Int = 0
 
-        for (ingredient in product?.ingredients) {
+        for (ingredient in product.ingredients!!) {
             if (ingredient.allergen) isAllergen++
             if (ingredient.irritant) isIrritant++
             if (ingredient.comedogenic) isComedogenic++
@@ -111,14 +105,14 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
 
-private fun getRating(product: Product?): String? {
-    if (product?.noRatingVotes == 0.0) {
-        return "0.0"
-    } else {
-        val raiting: Double? = product?.sumRainingVotes?.div(product?.noRatingVotes)
-        return raiting.toString()
+    private fun getRating(product: Product?): String? {
+        return if (product?.noRatingVotes == 0.0) {
+            "0.0"
+        } else {
+            val rating: Double? = product?.sumRainingVotes?.div(product.noRatingVotes)
+            rating.toString()
+        }
     }
-}
 
 
 }

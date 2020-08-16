@@ -45,7 +45,7 @@ class CategoryProductListActivity : AppCompatActivity() {
         }
     }
 
-    fun setupObservers() {
+    private fun setupObservers() {
         viewModel.categoryProductList.observe(
             this,
             Observer { products ->
@@ -67,8 +67,6 @@ class CategoryProductListActivity : AppCompatActivity() {
         return object :
             OnCategoryProductClickListener {
             override fun onCategoryProductClicked(product: Product) {
-                Toast.makeText(this@CategoryProductListActivity, product.name, Toast.LENGTH_SHORT)
-                    .show()
                 val intent =
                     Intent(this@CategoryProductListActivity, ProductDetailsActivity::class.java)
                 intent.putExtra("productId", product.id)

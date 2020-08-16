@@ -42,7 +42,7 @@ class CategoryListActivity : AppCompatActivity() {
         }
     }
 
-    fun setupObservers() {
+    private fun setupObservers() {
         viewModel.categoryList.observe(
             this,
             Observer { categories ->
@@ -60,7 +60,7 @@ class CategoryListActivity : AppCompatActivity() {
         )
     }
 
-    fun getOnCategoryClickListener(): OnCategoryClickListener {
+    private fun getOnCategoryClickListener(): OnCategoryClickListener {
         return object :
             OnCategoryClickListener {
             override fun onCategoryClicked(category: Category) {

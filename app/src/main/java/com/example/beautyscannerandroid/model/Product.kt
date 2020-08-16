@@ -7,9 +7,9 @@ data class Product(
     val producer: Producer,
     val description: String,
     val category: Category,
-    val ingredients: List<Ingredient>,
+    val ingredients: List<Ingredient>?,
     val url: String?,
-    val picture: String,
+    val picture: String?,
     val noRatingVotes: Double,
     val sumRainingVotes: Double
 )

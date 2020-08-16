@@ -5,6 +5,6 @@ data class User (
     val nick: String,
     val email: String,
     val role: String,
-    val allergens: List<Ingredient>,
-    val myProducts: List<MyProduct>
+    val allergens: List<Ingredient>?,
+    val myProducts: List<MyProduct>?
 )
