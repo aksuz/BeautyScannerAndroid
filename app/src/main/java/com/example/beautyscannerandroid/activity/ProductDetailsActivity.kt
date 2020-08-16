@@ -63,22 +63,13 @@ class ProductDetailsActivity : AppCompatActivity() {
 //            urlPath = product.url
         //todo display from internet
 
-        Glide
-            .with(this)
-            .load("https://static.wizaz.pl/media/cache/500x500/kwc/product/5/d/5d35f5be13aa6.jpeg")
-            .centerCrop()
-//                .placeholder(R.drawable.loading_spinner)
-            .into(productImage);
-
-//        } else if (!product.picture.isNullOrEmpty()) {
-////            val picName: String = "p" + product.id
-////            val image: List<Int> = listOf(R.drawable.p)
-//
-//            imagePath = product.picture
-//            val bmImg = BitmapFactory.decodeFile(imagePath)
-//
-//            productImage.setImageBitmap(bmImg)
-//        }
+        if(!product.url.isNullOrEmpty()) {
+            Glide
+                .with(this)
+                .load(product.url)
+                .centerCrop()
+                .into(productImage);
+        }
     }
 
     private fun analyseIngredients(product: Product) {
