@@ -37,4 +37,5 @@
     <string name="enter_password">Wprowadź hasło</string>
     <string name="repeat_password">Powtórz hasło</string>
     <string name="save_allergen">Zapisz alergen</string>
+    <string name="allergens">Składniki uczulające</string>
 </resources>

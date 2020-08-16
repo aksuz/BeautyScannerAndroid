@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.AddAllergenActivity" />
+        <activity android:name=".activity.DisplayAllergensActivity" />
         <activity android:name=".activity.EditUserPassword" />
         <activity android:name=".activity.EditUserDetailsActivity" />
         <activity android:name=".activity.UserActivity" />

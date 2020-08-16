@@ -1,10 +1,13 @@
 package com.example.beautyscannerandroid.network
 
 import com.example.beautyscannerandroid.model.*
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface BeautyService {
@@ -29,6 +32,12 @@ interface BeautyService {
 
     @GET("/api/users/{id}/userAllergens")
     fun getUserAllergensByUserId(@Path("id") id: Long): Call<List<Ingredient>>
+
+    @GET("/api/ingredients/onlyAllergen")
+    fun getAllAllergenIngredients(): Call<List<Ingredient>>
+
+//    @PUT("/api/users/update/{id}")
+//    fun updateUserDetails(@Path("id") id: Long, @Body User user): Call<ResponseBody>
 
 
     companion object {
