@@ -18,15 +18,6 @@ import kotlinx.android.synthetic.main.fragment_user_details.*
 import kotlinx.android.synthetic.main.fragment_user_products.*
 
 class UserActivity : AppCompatActivity() {
-//    private val viewModel: UserViewModel by lazy {
-//        ViewModelProvider(this).get(UserViewModel::class.java)
-//    }
-//    private val userProductListAdapter: UserProductsListAdapter by lazy {
-//        UserProductsListAdapter(
-//            listOf(),
-//            getOnUserProductClickListener()
-//        )
-//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

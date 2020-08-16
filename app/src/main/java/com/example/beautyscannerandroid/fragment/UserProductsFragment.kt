@@ -1,4 +1,4 @@
-package com.example.beautyscannerandroid.fragmnet
+package com.example.beautyscannerandroid.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beautyscannerandroid.R
-import com.example.beautyscannerandroid.activity.UserActivity
 import com.example.beautyscannerandroid.adapter.UserProductsListAdapter
 import com.example.beautyscannerandroid.listener.OnUserProductClickListener
 import com.example.beautyscannerandroid.model.MyProduct
