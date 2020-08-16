@@ -31,4 +31,5 @@
     <string name="welcome">Witaj, zaloguj się!</string>
     <string name="opening_date">Data otwarcia:</string>
     <string name="expiration_date">Termin przydatności:</string>
+    <string name="name">Nazwa</string>
 </resources>

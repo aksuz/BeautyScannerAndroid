@@ -48,6 +48,7 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun mapProductToLayout(product: Product) {
+        productName.text = product.name
         productCategory.text = product.category.name
         productDescription.text = product.description
         productIngredients.text = Html.fromHtml(getIngredients(product), Html.FROM_HTML_MODE_LEGACY)
