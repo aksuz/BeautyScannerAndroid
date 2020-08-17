@@ -36,8 +36,8 @@ interface BeautyService {
     @GET("/api/ingredients/onlyAllergen")
     fun getAllAllergenIngredients(): Call<List<Ingredient>>
 
-//    @PUT("/api/users/update/{id}")
-//    fun updateUserDetails(@Path("id") id: Long, @Body User user): Call<ResponseBody>
+    @PUT("/api/users/update/{id}")
+    fun updateUserDetails(@Path("id") id: Long, @Body user: User): Call<User>
 
 
     companion object {
@@ -47,7 +47,8 @@ interface BeautyService {
                 .addConverterFactory(
                     GsonConverterFactory.create()
                 )
-                .baseUrl("http://10.1.185.174:8080")
+//                .baseUrl("http://10.1.185.174:8080")
+                .baseUrl("http://192.168.0.147:8080")
                 .build()
 
             return retrofit.create(BeautyService::class.java)

@@ -52,7 +52,8 @@ class UserDetailsFragment : Fragment() {
         view.editUserInfoButton.setOnClickListener { view ->
             Toast.makeText(activity, "Kliknięto przycisk", Toast.LENGTH_SHORT).show()
             val intent = Intent(activity, EditUserDetailsActivity::class.java)
-            startActivity(intent)
+//            intent.putExtra("savedInstance", savedInstanceState)
+            startActivityForResult(intent, 1000)
         }
         view.editUserPasswordButton.setOnClickListener { view ->
             Toast.makeText(activity, "Kliknięto przycisk", Toast.LENGTH_SHORT).show()
@@ -61,7 +62,14 @@ class UserDetailsFragment : Fragment() {
         }
 
         return view
-        return inflater.inflate(R.layout.fragment_user_details, container, false)
+//        return inflater.inflate(R.layout.fragment_user_details, container, false)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 1000) {
+            viewModel.getUserDetails(2L)
+        }
     }
 
     companion object {

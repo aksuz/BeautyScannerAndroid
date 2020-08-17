@@ -2,7 +2,7 @@ package com.example.beautyscannerandroid.model
 
 data class User (
     val id: Long,
-    val nick: String,
-    val email: String,
+    var nick: String,
+    var email: String,
     val role: String
 )

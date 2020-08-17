@@ -1,5 +1,6 @@
 package com.example.beautyscannerandroid.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import com.example.beautyscannerandroid.listener.OnAllergenClickListener
 import com.example.beautyscannerandroid.model.Ingredient
 import com.example.beautyscannerandroid.viewmodel.DisplayAllergensListViewModel
 import kotlinx.android.synthetic.main.activity_display_allergen.*
+import kotlinx.android.synthetic.main.activity_edit_user_password.*
 
 class DisplayAllergensActivity : AppCompatActivity() {
     private val viewModel: DisplayAllergensListViewModel by lazy {
@@ -31,6 +33,11 @@ class DisplayAllergensActivity : AppCompatActivity() {
         initRecycler()
         setupObservers()
         viewModel.getAllAllergenIngredients()
+
+        saveAllergenButton.setOnClickListener {
+            val intent = Intent(this, UserActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initRecycler() {
