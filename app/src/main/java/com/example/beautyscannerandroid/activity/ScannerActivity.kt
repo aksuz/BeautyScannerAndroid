@@ -1,6 +1,7 @@
 package com.example.beautyscannerandroid.activity
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -62,8 +63,10 @@ class ScannerActivity : AppCompatActivity() {
         val imageAnalysis = ImageAnalysis(imageAnalysisConfig)
 
         val eanCodeAnalyzer = EanCodeAnalyzer { eanCodes ->
-            eanCodes.forEach {
-                Log.d("MainActivity", "EAN Code detected: ${it.rawValue}.")
+            if (eanCodes.isNotEmpty()) {
+                val intent = Intent(this, ProductDetailsActivity::class.java)
+                intent.putExtra("barecode", eanCodes.first().rawValue)
+                startActivity(intent)
             }
         }
 

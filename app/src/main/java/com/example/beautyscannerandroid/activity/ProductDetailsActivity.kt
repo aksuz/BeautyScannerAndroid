@@ -24,7 +24,15 @@ class ProductDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
         supportActionBar?.title = getString(R.string.product_details)
-        viewModel.getProductDetails(intent.getLongExtra("productId", 0))
+        intent.extras?.let {
+            if (it.containsKey("productId")) {
+                viewModel.getProductDetails(intent.getLongExtra("productId", 0))
+            }
+            if (it.containsKey("barecode")) {
+                intent.getStringExtra("barecode")?.let { it1 -> viewModel.getProductDetails(it1) }
+            }
+        }
+
         setupObservers()
         productIngredients.movementMethod = LinkMovementMethod.getInstance();
     }

@@ -34,5 +34,26 @@ class ProductDetailsListViewModel : ViewModel() {
         })
     }
 
+    fun getProductDetails(barecode: String) {
+        val service = BeautyService.create()
+        val call = service.getProductDetailsByBarcode(barecode)
+
+        //todo check response - ingredients isXXX all FALSE
+
+        call.enqueue(object : Callback<Product> {
+            override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                if (response.isSuccessful) {
+                    println()
+                    productDetails.value = response.body()
+                }
+            }
+
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                println()
+                shouldHideLoader.value = Any()
+            }
+        })
+    }
+
 
 }
