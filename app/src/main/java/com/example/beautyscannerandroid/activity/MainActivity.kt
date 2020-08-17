@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         scanner.setOnClickListener {
             Toast.makeText(this, "Kliknięto przycisk", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ScannerActivity::class.java)
+            startActivity(intent)
         }
         categories.setOnClickListener {
             val intent = Intent(this, CategoryListActivity::class.java)
