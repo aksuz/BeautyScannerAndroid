@@ -1,16 +1,13 @@
 package com.example.beautyscannerandroid.activity
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.beautyscannerandroid.R
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.model.User
-import com.example.beautyscannerandroid.viewmodel.CategoryListViewModel
 import com.example.beautyscannerandroid.viewmodel.EditUserDetailsViewModel
-import kotlinx.android.synthetic.main.activity_category_list.*
 import kotlinx.android.synthetic.main.activity_edit_user_details.*
 
 class EditUserDetailsActivity : AppCompatActivity() {
@@ -22,13 +19,12 @@ class EditUserDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_user_details)
 
-
         setupObservers()
 
         editNick.setText(intent.getStringExtra("userNick"))
         editEmail.setText(intent.getStringExtra("userEmail"))
         saveUserInfoButton.setOnClickListener {
-            viewModel.updateUserDetails(2L, creareUser())
+            viewModel.updateUserDetails(2L, createUser())
             this.finish()
         }
 //shared preferences - info o userze w calej
@@ -42,12 +38,12 @@ class EditUserDetailsActivity : AppCompatActivity() {
             })
     }
 
-    private fun creareUser(): User {
-       return User(
+    private fun createUser(): User {
+        return User(
             id = 2L,
             email = editEmail.text.toString(),
             nick = editNick.text.toString(),
-            role = "USER"
+            role = Constants.ROLE_USER
         )
     }
 }

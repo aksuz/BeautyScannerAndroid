@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.example.beautyscannerandroid.R
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.helper.EanCodeAnalyzer
 
 class ScannerActivity : AppCompatActivity() {
@@ -63,7 +64,7 @@ class ScannerActivity : AppCompatActivity() {
         val eanCodeAnalyzer = EanCodeAnalyzer { eanCodes ->
             if (eanCodes.isNotEmpty()) {
                 val intent = Intent(this, ProductDetailsActivity::class.java)
-                intent.putExtra("barecode", eanCodes.first().rawValue)
+                intent.putExtra(Constants.BARCODE, eanCodes.first().rawValue)
                 startActivity(intent)
             }
         }

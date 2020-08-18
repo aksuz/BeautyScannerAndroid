@@ -28,7 +28,6 @@ class CategoryListAdapter(var myDataset: List<Category>, val callback: OnCategor
 
     override fun onBindViewHolder(holder: CategoryListViewHolder, position: Int) {
         holder.view.categoryTitle.text = myDataset[position].name
-        //todo can add here more mappings e.g foto
 
         holder.view.categoryTitle.setOnClickListener {
             callback.onCategoryClicked(myDataset[position])

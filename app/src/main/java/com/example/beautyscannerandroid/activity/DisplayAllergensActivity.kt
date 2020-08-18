@@ -13,7 +13,6 @@ import com.example.beautyscannerandroid.listener.OnAllergenClickListener
 import com.example.beautyscannerandroid.model.Ingredient
 import com.example.beautyscannerandroid.viewmodel.DisplayAllergensListViewModel
 import kotlinx.android.synthetic.main.activity_display_allergen.*
-import kotlinx.android.synthetic.main.activity_edit_user_password.*
 
 class DisplayAllergensActivity : AppCompatActivity() {
     private val viewModel: DisplayAllergensListViewModel by lazy {

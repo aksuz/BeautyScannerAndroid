@@ -48,9 +48,6 @@ class UserAllergensFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
-//        addAllergenButton.setOnClickListener(this)
         val view: View = inflater!!.inflate(R.layout.fragment_user_allergens, container, false)
 
         view.addAllergenButton.setOnClickListener { view ->
@@ -71,6 +68,6 @@ class UserAllergensFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() : UserAllergensFragment = UserAllergensFragment()
+        fun newInstance(): UserAllergensFragment = UserAllergensFragment()
     }
 }

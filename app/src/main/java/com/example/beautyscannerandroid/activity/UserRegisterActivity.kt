@@ -1,13 +1,12 @@
 package com.example.beautyscannerandroid.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.beautyscannerandroid.R
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
-import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import kotlinx.android.synthetic.main.activity_user_login.resetDataButton
 import kotlinx.android.synthetic.main.activity_user_register.*
 
@@ -27,7 +26,7 @@ class UserRegisterActivity : AppCompatActivity() {
             val validationList = mutableListOf<String>()
             validateForm(validationList)
 
-            if(validationList.isNullOrEmpty()) {
+            if (validationList.isNullOrEmpty()) {
                 Toast.makeText(this, "Konto załozone", Toast.LENGTH_LONG).show()
                 val intent = Intent(this, UserActivity::class.java)
                 startActivity(intent)

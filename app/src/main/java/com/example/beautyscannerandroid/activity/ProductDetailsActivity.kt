@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.beautyscannerandroid.R
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.model.Product
 import com.example.beautyscannerandroid.viewmodel.ProductDetailsListViewModel
 import kotlinx.android.synthetic.main.activity_category_product_list.*
@@ -25,11 +26,12 @@ class ProductDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product_details)
         supportActionBar?.title = getString(R.string.product_details)
         intent.extras?.let {
-            if (it.containsKey("productId")) {
-                viewModel.getProductDetails(intent.getLongExtra("productId", 0))
+            if (it.containsKey(Constants.PRODUCT_ID)) {
+                viewModel.getProductDetails(intent.getLongExtra(Constants.PRODUCT_ID, 0))
             }
-            if (it.containsKey("barecode")) {
-                intent.getStringExtra("barecode")?.let { it1 -> viewModel.getProductDetails(it1) }
+            if (it.containsKey(Constants.BARCODE)) {
+                intent.getStringExtra(Constants.BARCODE)
+                    ?.let { it1 -> viewModel.getProductDetails(it1) }
             }
         }
 
@@ -37,12 +39,10 @@ class ProductDetailsActivity : AppCompatActivity() {
         productIngredients.movementMethod = LinkMovementMethod.getInstance();
     }
 
-
     private fun setupObservers() {
         viewModel.productDetails.observe(
             this,
             Observer { product ->
-//                categoryProductListLoader.visibility = View.GONE
                 mapProductToLayout(product)
             })
         viewModel.shouldHideLoader.observe(

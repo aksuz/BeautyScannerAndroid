@@ -31,14 +31,12 @@ class DisplayAllergensAdapter(
 
     override fun onBindViewHolder(holder: AllergenListViewHolder, position: Int) {
         holder.view.allergenIngredientTitle.text = myDataset[position].name
-        //todo can add here more mappings e.g foto
 
         holder.view.allergenIngredientTitle.setOnClickListener {
             callback.onAllergenClicked(myDataset[position])
         }
     }
 
+    override fun getItemCount() = myDataset.size
 
-        override fun getItemCount() = myDataset.size
-
-    }
+}

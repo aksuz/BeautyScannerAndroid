@@ -3,13 +3,12 @@ package com.example.beautyscannerandroid.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.beautyscannerandroid.R
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.listener.OnCategoryProductClickListener
 import com.example.beautyscannerandroid.model.Product
-import kotlinx.android.synthetic.main.activity_product_details.*
 import kotlinx.android.synthetic.main.item_category_product_list.view.*
 
 class CategoryProductListAdapter(
@@ -38,7 +37,7 @@ class CategoryProductListAdapter(
     ) {
         holder.view.productTitle.text = myDataset[position].name
 
-        var picture: String = "https://www.saccon.it/img/coming-soon.jpg"
+        var picture: String = Constants.URL_NO_PICTURE
         if (!myDataset[position].url.isNullOrEmpty()) {
             picture = myDataset[position].url.toString()
         }

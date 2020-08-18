@@ -37,7 +37,7 @@ class UserProductsFragment : Fragment() {
     private fun setupObservers() {
         viewModel.userProductList.observe(
             this,
-            Observer {userProducts ->
+            Observer { userProducts ->
                 userProductListAdapter.myDataset = userProducts
                 userProductListAdapter.notifyDataSetChanged()
             }
@@ -49,16 +49,17 @@ class UserProductsFragment : Fragment() {
             OnUserProductClickListener {
             override fun onUserProductClicked(product: MyProduct) {
                 val intent = Intent(activity, UserProductsListAdapter::class.java)
-//                intent.putExtra("productId", product.id)
                 startActivity(intent)
             }
         }
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_user_products, container, false)
     }
 
@@ -71,6 +72,6 @@ class UserProductsFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() : UserProductsFragment = UserProductsFragment()
+        fun newInstance(): UserProductsFragment = UserProductsFragment()
     }
 }

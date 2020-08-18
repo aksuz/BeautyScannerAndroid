@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beautyscannerandroid.R
 import com.example.beautyscannerandroid.adapter.CategoryListAdapter
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.listener.OnCategoryClickListener
 import com.example.beautyscannerandroid.model.Category
 import com.example.beautyscannerandroid.viewmodel.CategoryListViewModel
@@ -67,7 +68,7 @@ class CategoryListActivity : AppCompatActivity() {
                 //todo new activity, intent + category (intent.putExtra) i tam nastepne query gdzie category bedzie parametrem query
                 val intent =
                     Intent(this@CategoryListActivity, CategoryProductListActivity::class.java)
-                intent.putExtra("categoryId", category.id)
+                intent.putExtra(Constants.CATEGORY_ID, category.id)
                 startActivity(intent)
             }
         }

@@ -34,9 +34,9 @@ class ProductDetailsListViewModel : ViewModel() {
         })
     }
 
-    fun getProductDetails(barecode: String) {
+    fun getProductDetails(barcode: String) {
         val service = BeautyService.create()
-        val call = service.getProductDetailsByBarcode(barecode)
+        val call = service.getProductDetailsByBarcode(barcode)
 
         //todo check response - ingredients isXXX all FALSE
 

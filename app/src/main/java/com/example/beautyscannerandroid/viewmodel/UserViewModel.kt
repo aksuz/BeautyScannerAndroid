@@ -2,7 +2,9 @@ package com.example.beautyscannerandroid.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.beautyscannerandroid.model.*
+import com.example.beautyscannerandroid.model.Ingredient
+import com.example.beautyscannerandroid.model.MyProduct
+import com.example.beautyscannerandroid.model.User
 import com.example.beautyscannerandroid.network.BeautyService
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,7 +43,10 @@ class UserViewModel : ViewModel() {
                 println()
             }
 
-            override fun onResponse(call: Call<List<MyProduct>>, response: Response<List<MyProduct>>) {
+            override fun onResponse(
+                call: Call<List<MyProduct>>,
+                response: Response<List<MyProduct>>
+            ) {
                 if (response.isSuccessful) {
                     println()
                     userProductList.value = response.body()
@@ -59,7 +64,10 @@ class UserViewModel : ViewModel() {
                 println()
             }
 
-            override fun onResponse(call: Call<List<Ingredient>>, response: Response<List<Ingredient>>) {
+            override fun onResponse(
+                call: Call<List<Ingredient>>,
+                response: Response<List<Ingredient>>
+            ) {
                 if (response.isSuccessful) {
                     println()
                     userAllergenList.value = response.body()

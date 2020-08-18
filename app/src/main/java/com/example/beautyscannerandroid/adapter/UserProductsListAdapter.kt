@@ -6,14 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.beautyscannerandroid.R
-import com.example.beautyscannerandroid.listener.OnCategoryProductClickListener
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.listener.OnUserProductClickListener
 import com.example.beautyscannerandroid.model.MyProduct
-import com.example.beautyscannerandroid.model.Product
-import kotlinx.android.synthetic.main.item_category_product_list.view.*
 import kotlinx.android.synthetic.main.item_user_product_list.view.*
 
-class UserProductsListAdapter (
+class UserProductsListAdapter(
     var myDataset: List<MyProduct>,
     val callback: OnUserProductClickListener
 ) :
@@ -41,7 +39,7 @@ class UserProductsListAdapter (
         holder.view.userProductProducer.text = myDataset[position].productId.producer.name
         holder.view.userProductOpeningDate.text = myDataset[position].openingDate
         holder.view.userProductExpirationDate.text = myDataset[position].expirationTime
-        var picture: String = "https://www.saccon.it/img/coming-soon.jpg"
+        var picture: String = Constants.URL_NO_PICTURE
         if (!myDataset[position].productId.url.isNullOrEmpty()) {
             picture = myDataset[position].productId.url.toString()
         }

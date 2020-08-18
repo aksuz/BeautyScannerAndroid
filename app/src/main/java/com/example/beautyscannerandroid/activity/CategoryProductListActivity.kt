@@ -3,13 +3,13 @@ package com.example.beautyscannerandroid.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beautyscannerandroid.R
 import com.example.beautyscannerandroid.adapter.CategoryProductListAdapter
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.listener.OnCategoryProductClickListener
 import com.example.beautyscannerandroid.model.Product
 import com.example.beautyscannerandroid.viewmodel.CategoryProductListViewModel
@@ -19,7 +19,6 @@ class CategoryProductListActivity : AppCompatActivity() {
     private val viewModel: CategoryProductListViewModel by lazy {
         ViewModelProvider(this).get(CategoryProductListViewModel::class.java)
     }
-//    private var longCategoryId: Long = 
 
     private val categoryProductListAdapter: CategoryProductListAdapter by lazy {
         CategoryProductListAdapter(
@@ -35,7 +34,7 @@ class CategoryProductListActivity : AppCompatActivity() {
         initRecycler()
         setupObservers()
         categoryProductListLoader.visibility = View.VISIBLE
-        viewModel.getCategoryProducts(intent.getLongExtra("categoryId", 0))
+        viewModel.getCategoryProducts(intent.getLongExtra(Constants.CATEGORY_ID, 0))
     }
 
     private fun initRecycler() {
@@ -69,7 +68,7 @@ class CategoryProductListActivity : AppCompatActivity() {
             override fun onCategoryProductClicked(product: Product) {
                 val intent =
                     Intent(this@CategoryProductListActivity, ProductDetailsActivity::class.java)
-                intent.putExtra("productId", product.id)
+                intent.putExtra(Constants.PRODUCT_ID, product.id)
                 startActivity(intent)
             }
         }
