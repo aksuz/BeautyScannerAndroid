@@ -17,6 +17,7 @@ import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.listener.OnUserProductClickListener
 import com.example.beautyscannerandroid.model.MyProduct
 import com.example.beautyscannerandroid.viewmodel.UserViewModel
+import com.wajahatkarim3.easyvalidation.core.collection_ktx.atleastOneNumberList
 import kotlinx.android.synthetic.main.fragment_user_products.*
 
 class UserProductsFragment : Fragment() {
@@ -37,6 +38,7 @@ class UserProductsFragment : Fragment() {
             activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
         viewModel.getUserProducts(sharedPreferences!!.getLong(Constants.USER_ID, 0L))
         setupObservers()
+
     }
 
     private fun setupObservers() {
@@ -45,6 +47,9 @@ class UserProductsFragment : Fragment() {
             Observer { userProducts ->
                 userProductListAdapter.myDataset = userProducts
                 userProductListAdapter.notifyDataSetChanged()
+                if(!userProducts.isNullOrEmpty()) {
+                    noProductInfo.visibility = View.GONE
+                }
             }
         )
     }

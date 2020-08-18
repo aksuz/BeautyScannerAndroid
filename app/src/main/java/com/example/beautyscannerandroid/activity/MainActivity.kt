@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
         if (isUserLoggedIn(sharedPreferences)) {
             welcomeText.text =
-                getString(R.string.welcome) + sharedPreferences!!.getString(Constants.USER_NICK, "")
+                getString(R.string.welcome) + sharedPreferences!!.getString(Constants.USER_NICK, "")?.toUpperCase()
             userInfoButton.text = getString(R.string.user_info)
         }
 

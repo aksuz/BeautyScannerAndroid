@@ -25,7 +25,6 @@ class UserDetailsFragment : Fragment() {
         ViewModelProvider(this).get(UserViewModel::class.java)
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences(Constants.SHARED_INFO,Context.MODE_PRIVATE)
@@ -58,6 +57,11 @@ class UserDetailsFragment : Fragment() {
             val intent = Intent(activity, EditUserPasswordActivity::class.java)
             startActivity(intent)
         }
+        view.backToMainScreenButton.setOnClickListener { view ->
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         view.logoutButton.setOnClickListener { view ->
             val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
             sharedPreferences?.edit()?.clear()?.commit()

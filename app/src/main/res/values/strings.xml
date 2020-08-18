@@ -55,4 +55,7 @@
     <string name="validation_password_match">Oba hasła powinny być takie same</string>
     <string name="logout">Wyloguj</string>
     <string name="welcome">"Witaj, "</string>
+    <string name="back_main_screen">Powrót do EKRANU GŁÓWNEGO</string>
+    <string name="no_product_info">Nie masz jeszcze żadnych ulubionych produktów</string>
+    <string name="no_allergen_info">Nie masz jeszcze żadnych allergenów</string>
 </resources>

@@ -51,7 +51,7 @@
         android:id="@+id/editUserInfoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="110dp"
         android:text="@string/change_user_details"
         app:layout_constraintTop_toBottomOf="@id/emailLabel"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -72,6 +72,15 @@
         android:layout_height="wrap_content"
         android:text="@string/logout"
         app:layout_constraintTop_toBottomOf="@id/editUserPasswordButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/backToMainScreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back_main_screen"
+        app:layout_constraintTop_toBottomOf="@id/logoutButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 

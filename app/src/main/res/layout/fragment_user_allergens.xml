@@ -27,4 +27,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addAllergenButton" />
 
+    <TextView
+        android:id="@+id/noAllergenInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_allergen_info"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addAllergenButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

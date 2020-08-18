@@ -19,6 +19,7 @@ import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_user_allergens.*
 import kotlinx.android.synthetic.main.fragment_user_allergens.view.*
+import kotlinx.android.synthetic.main.fragment_user_products.*
 
 class UserAllergensFragment : Fragment() {
     private val viewModel: UserViewModel by lazy {
@@ -44,6 +45,9 @@ class UserAllergensFragment : Fragment() {
             Observer { userAllergens ->
                 userAllergenListAdapter.myDataset = userAllergens
                 userAllergenListAdapter.notifyDataSetChanged()
+                if(!userAllergens.isNullOrEmpty()) {
+                    noAllergenInfo.visibility = View.GONE
+                }
             }
         )
     }
