@@ -28,7 +28,7 @@
     <string name="user_products">Moje produkty</string>
     <string name="user_allergens">Moje alergeny</string>
     <string name="user_info">Informacje o użytykowniku</string>
-    <string name="welcome">Witaj, zaloguj się!</string>
+    <string name="welcome_stranger">Witaj, zaloguj się!</string>
     <string name="opening_date">Data otwarcia:</string>
     <string name="expiration_date">Termin przydatności:</string>
     <string name="name">Nazwa</string>
@@ -41,7 +41,7 @@
     <string name="show">Pokaż</string>
     <string name="hide">Ukryj</string>
     <string name="validation_match_password">Błąd! Oba hasła powinny być takie same</string>
-    <string name="login">Zaloguj</string>
+    <string name="login">Zaloguj się</string>
     <string name="user_login">Wprowadź login</string>
     <string name="reset">Wyczyść dane</string>
     <string name="login_header">Logowanie</string>
@@ -53,4 +53,6 @@
     <string name="validation_email_not_correct">Email nie jest poprawny</string>
     <string name="validation_password_not_empty">Hasło nie może być puste</string>
     <string name="validation_password_match">Oba hasła powinny być takie same</string>
+    <string name="logout">Wyloguj</string>
+    <string name="welcome">"Witaj, "</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.example.beautyscannerandroid.activity
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -8,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.beautyscannerandroid.R
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.viewmodel.EditUserPasswordViewModel
 import kotlinx.android.synthetic.main.activity_edit_user_password.*
 
@@ -43,7 +46,9 @@ class EditUserPasswordActivity : AppCompatActivity() {
 
         saveUserPasswordButton.setOnClickListener {
             if (editPassword.text.toString() == editPassword2.text.toString()) {
-                viewModel.updateUserPassword(2L, editPassword.text.toString())
+                val sharedPreferences: SharedPreferences? = this.getSharedPreferences(Constants.SHARED_INFO,
+                    Context.MODE_PRIVATE)
+                viewModel.updateUserPassword(sharedPreferences!!.getLong(Constants.USER_ID, 0L), editPassword.text.toString())
                 this.finish()
             } else {
                 Toast.makeText(

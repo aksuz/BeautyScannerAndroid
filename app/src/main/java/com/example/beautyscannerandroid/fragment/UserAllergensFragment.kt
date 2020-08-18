@@ -1,6 +1,8 @@
 package com.example.beautyscannerandroid.fragment
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beautyscannerandroid.R
 import com.example.beautyscannerandroid.activity.DisplayAllergensActivity
 import com.example.beautyscannerandroid.adapter.UserAllergenListAdapter
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_user_allergens.*
 import kotlinx.android.synthetic.main.fragment_user_allergens.view.*
@@ -30,7 +33,8 @@ class UserAllergensFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
-        viewModel.getUserAllergens(2L)
+        val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
+        viewModel.getUserAllergens(sharedPreferences!!.getLong(Constants.USER_ID, 0L))
         setupObservers()
     }
 

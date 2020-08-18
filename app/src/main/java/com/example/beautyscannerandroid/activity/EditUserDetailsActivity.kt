@@ -1,5 +1,7 @@
 package com.example.beautyscannerandroid.activity
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -24,10 +26,9 @@ class EditUserDetailsActivity : AppCompatActivity() {
         editNick.setText(intent.getStringExtra("userNick"))
         editEmail.setText(intent.getStringExtra("userEmail"))
         saveUserInfoButton.setOnClickListener {
-            viewModel.updateUserDetails(2L, createUser())
-            this.finish()
+            val sharedPreferences: SharedPreferences? = this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
+            viewModel.updateUserDetails(sharedPreferences!!.getLong(Constants.USER_ID, 0L), createUser())
         }
-//shared preferences - info o userze w calej
     }
 
     private fun setupObservers() {
@@ -39,8 +40,9 @@ class EditUserDetailsActivity : AppCompatActivity() {
     }
 
     private fun createUser(): User {
+        val sharedPreferences: SharedPreferences? = this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
         return User(
-            id = 2L,
+            id = sharedPreferences!!.getLong(Constants.USER_ID, 0L),
             email = editEmail.text.toString(),
             nick = editNick.text.toString(),
             role = Constants.ROLE_USER

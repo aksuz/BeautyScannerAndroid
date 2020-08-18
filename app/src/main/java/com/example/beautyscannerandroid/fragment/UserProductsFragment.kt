@@ -1,6 +1,8 @@
 package com.example.beautyscannerandroid.fragment
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beautyscannerandroid.R
 import com.example.beautyscannerandroid.adapter.UserProductsListAdapter
+import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.listener.OnUserProductClickListener
 import com.example.beautyscannerandroid.model.MyProduct
 import com.example.beautyscannerandroid.viewmodel.UserViewModel
@@ -30,7 +33,9 @@ class UserProductsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
-        viewModel.getUserProducts(2L)
+        val sharedPreferences: SharedPreferences? =
+            activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
+        viewModel.getUserProducts(sharedPreferences!!.getLong(Constants.USER_ID, 0L))
         setupObservers()
     }
 

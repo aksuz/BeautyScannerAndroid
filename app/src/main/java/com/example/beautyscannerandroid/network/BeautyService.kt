@@ -4,10 +4,7 @@ import com.example.beautyscannerandroid.model.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.PUT
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface BeautyService {
 
@@ -41,6 +38,12 @@ interface BeautyService {
     @PUT("/api/users/updatePassword/{id}")
     fun updateUserDetails(@Path("id") id: Long, @Body userPassword: String): Call<UserPassword>
 
+    @GET("/api/users/login/{nick}/{password}")
+    fun loginUser(@Path("nick") nick: String, @Path("password") password: String): Call<User>
+
+    @POST("/api/users/createUser")
+    fun createUserAccount(@Body userRegistration: UserRegistration): Call<User>
+
 
     companion object {
         fun create(): BeautyService {
@@ -50,7 +53,7 @@ interface BeautyService {
                     GsonConverterFactory.create()
                 )
                 .baseUrl("http://10.1.185.174:8080")
-//                .baseUrl("http://192.168.0.147:8080")
+//                .baseUrl("http://192.168.0.147:8080")  //ipconfig
                 .build()
 
             return retrofit.create(BeautyService::class.java)
