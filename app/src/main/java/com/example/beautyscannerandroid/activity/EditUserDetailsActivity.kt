@@ -25,7 +25,8 @@ class EditUserDetailsActivity : AppCompatActivity() {
 
         setupObservers()
 
-//        intent.getLongExtra("savedInstance", 0)
+        editNick.setText(intent.getStringExtra("userNick"))
+        editEmail.setText(intent.getStringExtra("userEmail"))
         saveUserInfoButton.setOnClickListener {
             viewModel.updateUserDetails(2L, creareUser())
             this.finish()

@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
 import android.view.TextureView
 import android.view.ViewGroup
 import android.widget.Toast
@@ -15,7 +14,6 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.example.beautyscannerandroid.R
 import com.example.beautyscannerandroid.helper.EanCodeAnalyzer
-import com.google.firebase.FirebaseApp
 
 class ScannerActivity : AppCompatActivity() {
 

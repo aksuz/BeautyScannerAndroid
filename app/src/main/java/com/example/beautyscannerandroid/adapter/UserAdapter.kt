@@ -14,15 +14,15 @@ class UserAdapter(context: Context, fragmentManager: FragmentManager) :
     FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private var pagerTitles: List<String> = listOf(
-        context.getString(R.string.user_details),
         context.getString(R.string.user_products),
+        context.getString(R.string.user_details),
         context.getString(R.string.user_allergens)
     )
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0 -> UserDetailsFragment()
-            1 -> UserProductsFragment()
+            0 -> UserProductsFragment()
+            1 -> UserDetailsFragment()
             2 -> UserAllergensFragment()
             else -> UserDetailsFragment()
         }
