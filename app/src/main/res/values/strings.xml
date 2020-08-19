@@ -22,7 +22,6 @@
     <string name="email">Email</string>
     <string name="change_user_password">Edytuj hasło</string>
     <string name="add_allergen">Dodaj alergen</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_details">Moje konto</string>
     <string name="user_products">Moje produkty</string>

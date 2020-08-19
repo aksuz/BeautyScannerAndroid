@@ -13,5 +13,3 @@ data class Product(
     val noRatingVotes: Double,
     val sumRainingVotes: Double
 )
-
-//todo sprawdzic modele, jesli null to ?
