@@ -4,7 +4,9 @@ import android.R
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.icu.util.Calendar
 import android.os.Bundle
+import android.text.TextUtils.indexOf
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -24,7 +26,7 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
     private val viewModel: AddProductToFavouritesViewModel by lazy {
         ViewModelProvider(this).get(AddProductToFavouritesViewModel::class.java)
     }
-
+    val calendar = Calendar.getInstance()
     var expMonths: Int = 0
     var oDay: Int = 0
     var oMonth: Int = 0
@@ -86,6 +88,7 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
             ArrayAdapter(this, R.layout.simple_spinner_item, (2015..2030).toList().toTypedArray())
         adapterOpeningYear.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
         openingYear.adapter = adapterOpeningYear
+        openingYear.setSelection(5)
 
         openingYear.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
@@ -98,8 +101,7 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
-                    // either one will work as well
-                    //                     val item = parent.getItemAtPosition(position) as String
+                    //  val item = parent.getItemAtPosition(position) as String
                     oYear = adapterOpeningYear.getItem(position)!!
                 }
             }
@@ -110,7 +112,7 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
             ArrayAdapter(this, R.layout.simple_spinner_item, (1..12).toList().toTypedArray())
         adapterOpeningMonth.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
         openingMonth.adapter = adapterOpeningMonth
-
+        openingMonth.setSelection(calendar.get(Calendar.MONTH))
         openingMonth.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -122,8 +124,6 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
-                    // either one will work as well
-                    //                     val item = parent.getItemAtPosition(position) as String
                     oMonth = adapterOpeningMonth.getItem(position)!!
                 }
             }
@@ -134,7 +134,7 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
             ArrayAdapter(this, R.layout.simple_spinner_item, (1..31).toList().toTypedArray())
         adapterOpeningDay.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
         openingDay.adapter = adapterOpeningDay
-
+        openingDay.setSelection(calendar.get(Calendar.DAY_OF_MONTH))
         openingDay.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -146,8 +146,6 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
-                    // either one will work as well
-                    //                     val item = parent.getItemAtPosition(position) as String
                     oDay = adapterOpeningDay.getItem(position)!!
                 }
             }
@@ -158,7 +156,7 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
             ArrayAdapter(this, R.layout.simple_spinner_item, listOf(1, 3, 6, 12, 18, 24, 36))
         adapterExpirationMonths.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
         userProductExpirationMonths.adapter = adapterExpirationMonths
-
+        userProductExpirationMonths.setSelection(3)
         userProductExpirationMonths.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -170,8 +168,6 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
-                    // either one will work as well
-                    //                     val item = parent.getItemAtPosition(position) as String
                     expMonths = adapterExpirationMonths.getItem(position)!!
                 }
             }

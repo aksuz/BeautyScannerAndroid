@@ -1,6 +1,8 @@
 package com.example.beautyscannerandroid.activity
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Html
 import android.text.method.LinkMovementMethod
@@ -26,6 +28,14 @@ class ProductDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
         supportActionBar?.title = getString(R.string.product_details)
+        val sharedPreferences: SharedPreferences? =
+            this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
+        val userId: Long = sharedPreferences!!.getLong(Constants.USER_ID, 0L)
+        if(userId == 0L) {
+            addProductToFavButton.visibility = View.GONE
+        }
+
+
         intent.extras?.let {
             if (it.containsKey(Constants.PRODUCT_ID)) {
                 viewModel.getProductDetails(intent.getLongExtra(Constants.PRODUCT_ID, 0))
