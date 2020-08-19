@@ -35,7 +35,7 @@ class UserRegisterActivity : AppCompatActivity() {
             registerUserPassword2.setText("")
         }
 
-        registerNewUserButton.setOnClickListener{
+        registerNewUserButton.setOnClickListener {
             val validationList = mutableListOf<String>()
             validateForm(validationList)
 
@@ -57,11 +57,17 @@ class UserRegisterActivity : AppCompatActivity() {
         viewModel.finishActivity.observe(
             this,
             Observer {
-                val sharedPreferences: SharedPreferences = this.getSharedPreferences(Constants.SHARED_INFO,Context.MODE_PRIVATE)
+                val sharedPreferences: SharedPreferences =
+                    this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 editor.putString(Constants.USER_NICK, viewModel.loggedInUser.value?.nick).commit()
                 editor.putString(Constants.USER_EMAIL, viewModel.loggedInUser.value?.email).commit()
-                viewModel.loggedInUser.value?.id?.let { it1 -> editor.putLong(Constants.USER_ID, it1).commit() }
+                viewModel.loggedInUser.value?.id?.let { it1 ->
+                    editor.putLong(
+                        Constants.USER_ID,
+                        it1
+                    ).commit()
+                }
 
                 Toast.makeText(this, "Konto załozone", Toast.LENGTH_LONG).show()
                 val intent = Intent(this, UserActivity::class.java)

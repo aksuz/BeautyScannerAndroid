@@ -46,9 +46,14 @@ class EditUserPasswordActivity : AppCompatActivity() {
 
         saveUserPasswordButton.setOnClickListener {
             if (editPassword.text.toString() == editPassword2.text.toString()) {
-                val sharedPreferences: SharedPreferences? = this.getSharedPreferences(Constants.SHARED_INFO,
-                    Context.MODE_PRIVATE)
-                viewModel.updateUserPassword(sharedPreferences!!.getLong(Constants.USER_ID, 0L), editPassword.text.toString())
+                val sharedPreferences: SharedPreferences? = this.getSharedPreferences(
+                    Constants.SHARED_INFO,
+                    Context.MODE_PRIVATE
+                )
+                viewModel.updateUserPassword(
+                    sharedPreferences!!.getLong(Constants.USER_ID, 0L),
+                    editPassword.text.toString()
+                )
                 this.finish()
             } else {
                 Toast.makeText(

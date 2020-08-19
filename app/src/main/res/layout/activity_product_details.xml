@@ -15,10 +15,10 @@
             android:id="@+id/addProductToFavButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add_product_to_fav"
             android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/add_product_to_fav"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -241,7 +241,6 @@
             app:layout_constraintStart_toEndOf="@id/productCategoryLabel"
             app:layout_constraintTop_toBottomOf="@id/productIsPregnantForbiden"
             tools:text="kjdahjkjd cvxcv x cvx c c v xc v xc v c vxc  vxc xkjadkhakjdhjkhk" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

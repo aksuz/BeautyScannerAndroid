@@ -19,8 +19,6 @@ class AddProductToFavouritesViewModel : ViewModel() {
         val service = BeautyService.create()
         val call = service.getProductDetailsById(productId)
 
-        //todo check response - ingredients isXXX all FALSE
-
         call.enqueue(object : Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
                 if (response.isSuccessful) {
@@ -39,8 +37,6 @@ class AddProductToFavouritesViewModel : ViewModel() {
     fun addUserProduct(userId: Long, myProduct: MyProduct) {
         val service = BeautyService.create()
         val call = service.addUserProduct(userId, myProduct)
-
-        //todo check response - ingredients isXXX all FALSE
 
         call.enqueue(object : Callback<MyProduct> {
             override fun onResponse(call: Call<MyProduct>, response: Response<MyProduct>) {

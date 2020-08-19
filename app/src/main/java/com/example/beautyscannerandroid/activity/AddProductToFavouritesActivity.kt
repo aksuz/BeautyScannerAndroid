@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.icu.util.Calendar
 import android.os.Bundle
-import android.text.TextUtils.indexOf
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -49,19 +48,14 @@ class AddProductToFavouritesActivity : AppCompatActivity() {
         adapterOpeningMonth()
         adapterOpeningYear()
 
-
         saveButton.setOnClickListener {
             oDate = LocalDate.of(oYear, oMonth, oDay)
             expDate = oDate.plusMonths(expMonths.toLong())
-
             viewModel.addUserProduct(userId, createMyProduct(oDate, expDate))
 
             val intent = Intent(this, UserActivity::class.java)
             startActivity(intent)
-
         }
-
-
     }
 
     private fun createMyProduct(oDate: LocalDate?, expDate: LocalDate?): MyProduct {

@@ -45,9 +45,6 @@ class UserAllergensFragment : Fragment() {
             Observer { userAllergens ->
                 userAllergenListAdapter.myDataset = userAllergens
                 userAllergenListAdapter.notifyDataSetChanged()
-//                if (!userAllergens.isNullOrEmpty()) {
-//                    noAllergenInfo.visibility = View.GONE
-//                }
             }
         )
     }

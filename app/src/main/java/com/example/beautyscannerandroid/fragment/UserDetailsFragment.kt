@@ -27,7 +27,8 @@ class UserDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences(Constants.SHARED_INFO,Context.MODE_PRIVATE)
+        val sharedPreferences: SharedPreferences? =
+            activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
         viewModel.getUserDetails(sharedPreferences!!.getLong(Constants.USER_ID, 0L))
         setupObservers()
     }
@@ -63,7 +64,8 @@ class UserDetailsFragment : Fragment() {
         }
 
         view.logoutButton.setOnClickListener { view ->
-            val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
+            val sharedPreferences: SharedPreferences? =
+                activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
             sharedPreferences?.edit()?.clear()?.commit()
             val intent = Intent(activity, MainActivity::class.java)
             startActivity(intent)
@@ -75,7 +77,8 @@ class UserDetailsFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1000) {
-            val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences(Constants.SHARED_INFO,Context.MODE_PRIVATE)
+            val sharedPreferences: SharedPreferences? =
+                activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
             viewModel.getUserDetails(sharedPreferences!!.getLong(Constants.USER_ID, 0L))
         }
     }

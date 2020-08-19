@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CategoryListViewModel: ViewModel() {
+class CategoryListViewModel : ViewModel() {
 
     val categoryList = MutableLiveData<List<Category>>()
     val shouldHideLoader = MutableLiveData<Any>()
@@ -18,12 +18,16 @@ class CategoryListViewModel: ViewModel() {
         val call = service.getCategories()
 
         call.enqueue(object : Callback<List<Category>> {
-            override fun onResponse(call: Call<List<Category>>, response: Response<List<Category>>) {
-                if (response.isSuccessful){
+            override fun onResponse(
+                call: Call<List<Category>>,
+                response: Response<List<Category>>
+            ) {
+                if (response.isSuccessful) {
                     println()
                     categoryList.value = response.body()
                 }
             }
+
             override fun onFailure(call: Call<List<Category>>, t: Throwable) {
                 println()
                 shouldHideLoader.value = Any()

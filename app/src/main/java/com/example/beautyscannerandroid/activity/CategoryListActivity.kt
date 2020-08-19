@@ -65,7 +65,6 @@ class CategoryListActivity : AppCompatActivity() {
         return object :
             OnCategoryClickListener {
             override fun onCategoryClicked(category: Category) {
-                //todo new activity, intent + category (intent.putExtra) i tam nastepne query gdzie category bedzie parametrem query
                 val intent =
                     Intent(this@CategoryListActivity, CategoryProductListActivity::class.java)
                 intent.putExtra(Constants.CATEGORY_ID, category.id)

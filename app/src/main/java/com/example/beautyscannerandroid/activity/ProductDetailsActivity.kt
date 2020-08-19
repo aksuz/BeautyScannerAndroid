@@ -31,7 +31,7 @@ class ProductDetailsActivity : AppCompatActivity() {
         val sharedPreferences: SharedPreferences? =
             this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
         val userId: Long = sharedPreferences!!.getLong(Constants.USER_ID, 0L)
-        if(userId == 0L) {
+        if (userId == 0L) {
             addProductToFavButton.visibility = View.GONE
         }
 
@@ -67,8 +67,6 @@ class ProductDetailsActivity : AppCompatActivity() {
             this,
             Observer {
                 categoryProductListLoader.visibility = View.GONE
-                //todo info dla usera że nie zwracamy listy
-                //todo if connection fail inform categotyListLoader
             }
         )
     }
@@ -85,7 +83,7 @@ class ProductDetailsActivity : AppCompatActivity() {
     }
 
     private fun addImage(product: Product) {
-        var picture: String = "https://www.saccon.it/img/coming-soon.jpg"
+        var picture: String = Constants.URL_NO_PICTURE
         if (!product.url.isNullOrEmpty()) {
             picture = product.url
         }

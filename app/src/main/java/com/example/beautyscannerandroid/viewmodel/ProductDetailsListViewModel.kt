@@ -17,8 +17,6 @@ class ProductDetailsListViewModel : ViewModel() {
         val service = BeautyService.create()
         val call = service.getProductDetailsById(productId)
 
-        //todo check response - ingredients isXXX all FALSE
-
         call.enqueue(object : Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
                 if (response.isSuccessful) {
@@ -37,8 +35,6 @@ class ProductDetailsListViewModel : ViewModel() {
     fun getProductDetails(barcode: String) {
         val service = BeautyService.create()
         val call = service.getProductDetailsByBarcode(barcode)
-
-        //todo check response - ingredients isXXX all FALSE
 
         call.enqueue(object : Callback<Product> {
             override fun onResponse(call: Call<Product>, response: Response<Product>) {

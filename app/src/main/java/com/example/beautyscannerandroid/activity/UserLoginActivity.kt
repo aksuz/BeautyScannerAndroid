@@ -34,7 +34,10 @@ class UserLoginActivity : AppCompatActivity() {
             validateForm(validationList)
 
             if (validationList.isNullOrEmpty()) {
-                viewModel.loginUser(loginUserName.text.toString().trim(), loginUserPassword.text.toString().trim())
+                viewModel.loginUser(
+                    loginUserName.text.toString().trim(),
+                    loginUserPassword.text.toString().trim()
+                )
 
 
             } else {
@@ -52,17 +55,24 @@ class UserLoginActivity : AppCompatActivity() {
         viewModel.finishActivity.observe(
             this,
             Observer {
-                val sharedPreferences: SharedPreferences = this.getSharedPreferences(Constants.SHARED_INFO,Context.MODE_PRIVATE)
+                val sharedPreferences: SharedPreferences =
+                    this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 editor.putString(Constants.USER_NICK, viewModel.loggedInUser.value?.nick).commit()
                 editor.putString(Constants.USER_EMAIL, viewModel.loggedInUser.value?.email).commit()
-                viewModel.loggedInUser.value?.id?.let { it1 -> editor.putLong(Constants.USER_ID, it1).commit() }
+                viewModel.loggedInUser.value?.id?.let { it1 ->
+                    editor.putLong(
+                        Constants.USER_ID,
+                        it1
+                    ).commit()
+                }
 
                 Toast.makeText(this, "Zalogowano", Toast.LENGTH_LONG).show()
                 val intent = Intent(this, UserActivity::class.java)
                 startActivity(intent)
             })
     }
+
     private fun validateForm(validationList: MutableList<String>) {
         loginUserName.nonEmpty() {
             validationList.add(getString(R.string.validation_nick_not_empty))

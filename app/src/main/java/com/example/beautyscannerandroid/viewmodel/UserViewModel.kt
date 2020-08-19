@@ -29,7 +29,7 @@ class UserViewModel : ViewModel() {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful) {
                     println()
-                    if(response.code() == 204)  {
+                    if (response.code() == 204) {
                         isNoContentResponse = true
                     } else {
                         userDetails.value = response.body()

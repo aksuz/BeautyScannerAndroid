@@ -42,9 +42,9 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/editEmailLabel"
         app:layout_constraintStart_toStartOf="@id/editNick"
         app:layout_constraintTop_toTopOf="@id/editEmailLabel"
-        app:layout_constraintBottom_toBottomOf="@id/editEmailLabel"
         tools:text="kjdahjkjdkjadkhakjdhjkhk" />
 
     <Button
@@ -53,9 +53,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="@string/save_user_details"
-        app:layout_constraintTop_toBottomOf="@id/editEmailLabel"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editEmailLabel" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

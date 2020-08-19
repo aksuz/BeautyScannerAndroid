@@ -46,9 +46,6 @@ class UserProductsFragment : Fragment() {
             Observer { userProducts ->
                 userProductListAdapter.myDataset = userProducts
                 userProductListAdapter.notifyDataSetChanged()
-//                if (!userProducts.isNullOrEmpty()) {
-//                    noProductInfo.visibility = View.GONE
-//                }
             }
         )
     }

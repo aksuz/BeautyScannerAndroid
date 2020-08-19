@@ -14,7 +14,7 @@ class UserRegisterViewModel : ViewModel() {
     val loggedInUser = MutableLiveData<User>()
     val finishActivity = MutableLiveData<Any>()
 
-    fun registerUser(userRegistration : UserRegistration) {
+    fun registerUser(userRegistration: UserRegistration) {
         val service = BeautyService.create()
         val call = service.createUserAccount(userRegistration)
 

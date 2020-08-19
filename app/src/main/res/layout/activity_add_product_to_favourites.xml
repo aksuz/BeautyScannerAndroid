@@ -85,46 +85,33 @@
         app:layout_constraintTop_toBottomOf="@id/productCategory" />
     tools:text="cokosfdfsfdd" />
 
-<!--    <EditText-->
-<!--        android:id="@+id/userProductOpeningDate"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="10dp"-->
-<!--        android:textSize="15sp"-->
-<!--        android:inputType="date"-->
-<!--        android:hint="Enter Date"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/userProductOpeningDateLabel"-->
-<!--        app:layout_constraintStart_toEndOf="@id/userProductOpeningDateLabel"-->
-<!--        app:layout_constraintTop_toTopOf="@id/userProductOpeningDateLabel"-->
-<!--        tools:text="cokosfdfsfdd" />-->
-
     <Spinner
         android:id="@+id/openingDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:textSize="10sp"
         android:spinnerMode="dropdown"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@id/userProductOpeningDateLabel"
         app:layout_constraintStart_toEndOf="@id/userProductOpeningDateLabel"
-        app:layout_constraintTop_toTopOf="@id/userProductOpeningDateLabel"/>
+        app:layout_constraintTop_toTopOf="@id/userProductOpeningDateLabel" />
 
     <Spinner
-    android:id="@+id/openingMonth"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="10sp"
-    android:spinnerMode="dropdown"
-    app:layout_constraintBottom_toBottomOf="@id/openingDay"
-    app:layout_constraintStart_toEndOf="@id/openingDay"
-    app:layout_constraintTop_toTopOf="@id/openingDay"/>
+        android:id="@+id/openingMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/openingDay"
+        app:layout_constraintStart_toEndOf="@id/openingDay"
+        app:layout_constraintTop_toTopOf="@id/openingDay" />
 
     <Spinner
         android:id="@+id/openingYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
         android:spinnerMode="dropdown"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@id/openingMonth"
         app:layout_constraintStart_toEndOf="@id/openingMonth"
         app:layout_constraintTop_toTopOf="@id/openingMonth" />
@@ -138,15 +125,15 @@
         android:layout_marginLeft="10dp"
         android:text="@string/expiration_date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/openingMonth"/>
+        app:layout_constraintTop_toBottomOf="@id/openingMonth" />
 
     <Spinner
         android:id="@+id/userProductExpirationMonths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:textSize="15sp"
         android:spinnerMode="dropdown"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@id/userProductExpirationDateLabel"
         app:layout_constraintStart_toEndOf="@id/userProductExpirationDateLabel"
         app:layout_constraintTop_toTopOf="@id/userProductExpirationDateLabel"
@@ -160,16 +147,16 @@
         android:text="@string/no_months"
         app:layout_constraintBottom_toBottomOf="@id/userProductExpirationMonths"
         app:layout_constraintStart_toEndOf="@id/userProductExpirationMonths"
-        app:layout_constraintTop_toTopOf="@id/userProductExpirationMonths"/>
+        app:layout_constraintTop_toTopOf="@id/userProductExpirationMonths" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save"
         android:layout_marginTop="500dp"
-        app:layout_constraintTop_toBottomOf="parent"
+        android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 

@@ -56,8 +56,6 @@ class CategoryProductListActivity : AppCompatActivity() {
             this,
             Observer {
                 categoryProductListLoader.visibility = View.GONE
-                //todo info dla usera że nie zwracamy listy
-                //todo if connection fail inform categotyListLoader
             }
         )
     }

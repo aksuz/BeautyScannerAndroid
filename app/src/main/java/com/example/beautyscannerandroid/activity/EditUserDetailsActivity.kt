@@ -26,8 +26,12 @@ class EditUserDetailsActivity : AppCompatActivity() {
         editNick.setText(intent.getStringExtra("userNick"))
         editEmail.setText(intent.getStringExtra("userEmail"))
         saveUserInfoButton.setOnClickListener {
-            val sharedPreferences: SharedPreferences? = this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
-            viewModel.updateUserDetails(sharedPreferences!!.getLong(Constants.USER_ID, 0L), createUser())
+            val sharedPreferences: SharedPreferences? =
+                this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
+            viewModel.updateUserDetails(
+                sharedPreferences!!.getLong(Constants.USER_ID, 0L),
+                createUser()
+            )
         }
     }
 
@@ -40,7 +44,8 @@ class EditUserDetailsActivity : AppCompatActivity() {
     }
 
     private fun createUser(): User {
-        val sharedPreferences: SharedPreferences? = this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
+        val sharedPreferences: SharedPreferences? =
+            this.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
         return User(
             id = sharedPreferences!!.getLong(Constants.USER_ID, 0L),
             email = editEmail.text.toString(),
