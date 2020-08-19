@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.UserRegisterActivity"></activity>
+        <activity android:name=".activity.AddProductToFavouritesActivity"></activity>
+        <activity android:name=".activity.UserRegisterActivity" />
         <activity android:name=".activity.UserLoginActivity" />
         <activity android:name=".activity.ScannerActivity" />
         <activity android:name=".activity.DisplayAllergensActivity" />

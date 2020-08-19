@@ -38,7 +38,7 @@ class UserProductsListAdapter(
         holder.view.userProductName.text = myDataset[position].productId.name
         holder.view.userProductProducer.text = myDataset[position].productId.producer.name
         holder.view.userProductOpeningDate.text = myDataset[position].openingDate
-        holder.view.userProductExpirationDate.text = myDataset[position].expirationTime
+        holder.view.userProductExpirationMonths.text = myDataset[position].expirationTime
         var picture: String = Constants.URL_NO_PICTURE
         if (!myDataset[position].productId.url.isNullOrEmpty()) {
             picture = myDataset[position].productId.url.toString()

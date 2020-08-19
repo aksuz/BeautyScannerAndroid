@@ -67,7 +67,7 @@
         tools:text="cokosfdfsfdd" />
 
     <TextView
-        android:id="@+id/userProductExpirationDate"
+        android:id="@+id/userProductExpirationMonths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"

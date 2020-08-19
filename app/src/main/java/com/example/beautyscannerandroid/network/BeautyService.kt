@@ -44,6 +44,12 @@ interface BeautyService {
     @POST("/api/users/createUser")
     fun createUserAccount(@Body userRegistration: UserRegistration): Call<User>
 
+    @POST("/api/users/{id}/userProducts/addProduct")
+    fun addUserProduct(@Path("id") id: Long,@Body userProduct: MyProduct): Call<MyProduct>
+
+
+
+
 
     companion object {
         fun create(): BeautyService {

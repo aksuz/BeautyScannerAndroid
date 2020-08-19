@@ -15,6 +15,7 @@ class UserViewModel : ViewModel() {
     val userDetails = MutableLiveData<User>()
     val userAllergenList = MutableLiveData<List<Ingredient>>()
     val userProductList = MutableLiveData<List<MyProduct>>()
+    var isNoContentResponse: Boolean = false
 
     fun getUserDetails(userId: Long) {
         val service = BeautyService.create()
@@ -28,7 +29,11 @@ class UserViewModel : ViewModel() {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful) {
                     println()
-                    userDetails.value = response.body()
+                    if(response.code() == 204)  {
+                        isNoContentResponse = true
+                    } else {
+                        userDetails.value = response.body()
+                    }
                 }
             }
         })

@@ -1,5 +1,6 @@
 package com.example.beautyscannerandroid.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import android.text.method.LinkMovementMethod
@@ -37,6 +38,13 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         setupObservers()
         productIngredients.movementMethod = LinkMovementMethod.getInstance();
+
+
+        addProductToFavButton.setOnClickListener {
+            val intent = Intent(this, AddProductToFavouritesActivity::class.java)
+            intent.putExtra(Constants.PRODUCT_ID, viewModel.productDetails.value?.id)
+            startActivity(intent)
+        }
     }
 
     private fun setupObservers() {
@@ -57,6 +65,7 @@ class ProductDetailsActivity : AppCompatActivity() {
 
     private fun mapProductToLayout(product: Product) {
         productName.text = product.name
+        productProducer.text = product.producer.name
         productCategory.text = product.category.name
         productDescription.text = product.description
         productIngredients.text = Html.fromHtml(getIngredients(product), Html.FROM_HTML_MODE_LEGACY)

@@ -19,7 +19,6 @@ import com.example.beautyscannerandroid.helper.Constants
 import com.example.beautyscannerandroid.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_user_allergens.*
 import kotlinx.android.synthetic.main.fragment_user_allergens.view.*
-import kotlinx.android.synthetic.main.fragment_user_products.*
 
 class UserAllergensFragment : Fragment() {
     private val viewModel: UserViewModel by lazy {
@@ -34,7 +33,8 @@ class UserAllergensFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
-        val sharedPreferences: SharedPreferences? = activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
+        val sharedPreferences: SharedPreferences? =
+            activity?.getSharedPreferences(Constants.SHARED_INFO, Context.MODE_PRIVATE)
         viewModel.getUserAllergens(sharedPreferences!!.getLong(Constants.USER_ID, 0L))
         setupObservers()
     }
@@ -45,9 +45,9 @@ class UserAllergensFragment : Fragment() {
             Observer { userAllergens ->
                 userAllergenListAdapter.myDataset = userAllergens
                 userAllergenListAdapter.notifyDataSetChanged()
-                if(!userAllergens.isNullOrEmpty()) {
-                    noAllergenInfo.visibility = View.GONE
-                }
+//                if (!userAllergens.isNullOrEmpty()) {
+//                    noAllergenInfo.visibility = View.GONE
+//                }
             }
         )
     }

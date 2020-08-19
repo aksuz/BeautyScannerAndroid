@@ -58,4 +58,16 @@
     <string name="back_main_screen">Powrót do EKRANU GŁÓWNEGO</string>
     <string name="no_product_info">Nie masz jeszcze żadnych ulubionych produktów</string>
     <string name="no_allergen_info">Nie masz jeszcze żadnych allergenów</string>
+    <string name="add_product_to_fav">Dodaj produkt do ulubionych</string>
+    <string name="producer">Producent</string>
+    <string name="no_months">miesięcy</string>
+    <string name="save">Zapisz</string>
+    <string-array name="numbers_dropdown">
+        <item>1</item>
+        <item>3</item>
+        <item>6</item>
+        <item>12</item>
+        <item>18</item>
+        <item>24</item>
+    </string-array>
 </resources>
